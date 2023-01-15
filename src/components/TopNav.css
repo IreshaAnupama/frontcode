@@ -1,0 +1,22 @@
+.bg-myred{
+    background-color: brown;
+
+}
+
+.right-aligned{
+    justify-content: flex-end ;
+}
+
+/* Footer */
+#footer{
+    
+    color: white;
+}
+
+
+/* UserMap */
+.center {
+    padding: 70px 0;
+    border: 3px solid green;
+    text-align: center;
+  }

@@ -3,12 +3,85 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {createBrowserRouter, 
+  RouterProvider} from "react-router-dom";
+
+
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Signing from './pages/Signing';
+import UserMap from './pages/MapForUser';
+import DriverProfile from'./driverPages/DriverProfile';
+import Imageexample from './driverPages/Imageexample';
+import OrderOfShedule from './driverPages/OrderOfShedule';
+import Eamplemap from './components/Eamplemap';
+import ParcelList from './userPages/ParcelList';
+import UserProfile from './userPages/UserProfile';
+
+
+  const router = createBrowserRouter([
+    {
+      path:"/",
+      element: <App/>
+    },
+    {
+      path:"/home",
+      element:<Home/>
+    },
+    {
+      path:"/about",
+      element:<About/>
+    },
+    {
+      path:"/contact",
+      element:<Contact/>
+    },
+    {
+      path:"/login",
+      element:<Login/>
+    },
+    {
+      path:"/signing",
+      element:<Signing/>
+    },
+    {
+      path:"/userMap",
+      element:<UserMap/>
+    },
+    {
+      path:"/driverProfile",
+      element:<DriverProfile/>
+    },
+    {
+      path:"/imageexample",
+      element:<Imageexample/>
+    },
+    {
+      path:"/orderofshedule",
+      element:<OrderOfShedule/>
+    },
+    {
+      path:"/examplemap",
+      element:<Eamplemap/>
+    }
+    ,
+    {
+      path:"/parcelList",
+      element:<ParcelList/>
+    },
+    {
+      path:"/userProfile",
+      element:<UserProfile/>
+    }
+
+  ])
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <RouterProvider router={router} />
 );
 
 // If you want to start measuring performance in your app, pass a function

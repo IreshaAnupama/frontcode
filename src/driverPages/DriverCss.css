@@ -1,0 +1,11 @@
+.containerd{
+    max-width: 100%;
+   
+}
+
+.center-component{
+    display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 100px;
+}

@@ -13,7 +13,7 @@ const login = () => {
 
       <div className='wrapper  d-flex align-items-center justify-content-center w-100'>
       <div className='login' >
-        <h2 className='mb-3'>Login Form</h2>
+        <h2 className='mb-3'>Login Here</h2>
         
         <Form>
     <Form.Group className="mb-3" controlId="formBasicEmail">

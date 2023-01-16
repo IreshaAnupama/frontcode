@@ -1,3 +1,12 @@
+commit 2fcac0f151b7699cfe44d7b948251b73788d9a62
+Author: iresha <ireshaabrew@gmail.com>
+Date:   Sun Jan 15 17:16:34 2023 +0530
+
+    Driver and User logine page completed
+    Driver and User register page completed
+    Navigation bar completed
+    Add Google map
+    
 commit 5225066eb8c7670a4f208e99f9a84005a3f0681b
 Author: iresha <ireshaabrew@gmail.com>
 Date:   Sun Jan 15 11:30:58 2023 +0530

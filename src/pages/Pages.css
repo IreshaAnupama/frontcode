@@ -9,11 +9,12 @@
     
     
   }
+  
   #imgh{
     background-color: aquamarine;
   }
   .home{
-    padding-top: 6rem;
+    padding-top: 10rem;
     display:flex;
     align-items:center;
     justify-content: space-around;
@@ -21,14 +22,23 @@
     
     margin-top: -450px;
   }
+  .marginfix{
+    margin-top: 270px;
+
+    color: #311432;
+   
+    font-size: x-large;
+  }
 
   .text{
-    width:50%
+    width:92%
+    
   }
 
   .text p{
-    color:black;
-    margin-top:15px;
+    font-size: 30px;
+    color: white;
+    font-size: x-large;
     font-family:"poppins",sans-serif;
   }
 

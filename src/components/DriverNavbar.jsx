@@ -21,7 +21,7 @@ const DriverNavbar = () => {
           <Nav.Link href="#features"></Nav.Link>
           <Nav.Link href="/home">Home</Nav.Link>
           <Nav.Link href="/contact">Contact</Nav.Link>
-          <Nav.Link href="/orderofshedule">Shedule</Nav.Link>
+          
           <NavDropdown title="services" id="collasible-nav-dropdown">
             <NavDropdown.Item href="/UserMap">Maplocation</NavDropdown.Item>
             <NavDropdown.Item href="/imageexample">
@@ -35,6 +35,7 @@ const DriverNavbar = () => {
           </NavDropdown>
         </Nav>
         <Nav>
+        <Nav.Link href="/orderofshedule">Shedule</Nav.Link>
           <Nav.Link href="/driverProfile">Profile</Nav.Link>
         </Nav>
       </Navbar.Collapse>

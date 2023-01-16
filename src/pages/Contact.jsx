@@ -1,7 +1,7 @@
 import React from 'react'
 import './Pages.css';
 
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import TopNav from '../components/TopNav';
 import Footer from '../components/Footer';
@@ -135,8 +135,8 @@ const Contact = () => {
                       </div>
                       <div className="text pl-3">
                         <p>
-                          <span>Website:</span>
-                          <a href="#">yoursite.com</a>
+                          <span>Facebook :</span>
+                          <a href="facebook.com">site.facebook</a>
                         </p>
                       </div>
                     </div>

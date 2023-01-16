@@ -23,8 +23,8 @@
     margin-top: -450px;
   }
   .marginfix{
-    margin-top: 270px;
-
+    margin-top: 200px;
+    text-align: center;
     color: #311432;
    
     font-size: x-large;
@@ -32,17 +32,17 @@
 
   .text{
     width:92%
-    
   }
 
   .text p{
-    font-size: 30px;
-    color: white;
-    font-size: x-large;
+    
     font-family:"poppins",sans-serif;
   }
+  .text h1{
+    color: white;
+  }
 
-  .teht h3{
+  .text h3{
       color:black;
       font-family:"poppins",sans-serif;
 

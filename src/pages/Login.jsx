@@ -16,11 +16,12 @@ const login = () => {
         <h2 className='mb-3'>Login Here</h2>
         
         <Form>
+    
     <Form.Group className="mb-3" controlId="formBasicEmail">
-      <Form.Label>Email address</Form.Label>
-      <Form.Control type="email" placeholder="Enter email" />
+      <Form.Label>Phone Number</Form.Label>
+      <Form.Control type="text" placeholder="Enter phone number" />
       <Form.Text className="text-muted">
-        We'll never share your email with anyone else.
+        
       </Form.Text>
     </Form.Group>
 

@@ -42,7 +42,7 @@ import logo from '../img/logo.png';
             <Nav.Link href="/signing">
               Signin
             </Nav.Link>
-            <Nav.Link href="/driverProfile">Profile</Nav.Link>
+            
           </Nav>
         </Navbar.Collapse>
       </Container>

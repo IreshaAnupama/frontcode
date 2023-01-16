@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Nav from 'react-bootstrap/Nav';
+import { Link } from 'react-router-dom';
 
 const Signing = () => {
   return (
@@ -15,12 +16,17 @@ const Signing = () => {
         <h2 className='mb-3'>Sign in here </h2>
         
         <Form>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Label>Phone number</Form.Label>
+      <Form.Control type="text" placeholder="Enter your phone number" />
+      <Form.Text className="text-muted">
+        We'll never share your phone number with anyone else.
+      </Form.Text>
+    </Form.Group>
     <Form.Group className="mb-3" controlId="formBasicEmail">
       <Form.Label>Email address</Form.Label>
       <Form.Control type="email" placeholder="Enter email" />
-      <Form.Text className="text-muted">
-        We'll never share your email with anyone else.
-      </Form.Text>
+     
     </Form.Group>
 
     <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -40,10 +46,11 @@ const Signing = () => {
       <Button variant="primary" type="submit">
       Sign as User
     </Button>{'  '}
- 
-    <Button variant="primary" type="submit">
+
+    <Link to={"/driverProfile"}><Button variant="primary" type="submit">
       Sign as Driver
-    </Button>
+    </Button></Link>
+    
   </Form>
   </div>
         

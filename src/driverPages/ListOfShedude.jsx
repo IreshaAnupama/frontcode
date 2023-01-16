@@ -52,7 +52,7 @@ function ListOfShedule() {
       <Accordion.Item eventKey="1">
         <Accordion.Header>
              <Row>
-                <Col>No : 01</Col>
+                <Col>No : 02</Col>
                 <Col>Item no-ABR5423 </Col>
                 <Col>Tel:-0779990007</Col>
             </Row> 
@@ -92,7 +92,7 @@ function ListOfShedule() {
       <Accordion.Item eventKey="2">
         <Accordion.Header>
              <Row>
-                <Col>No : 01</Col>
+                <Col>No : 03</Col>
                 <Col>Item no-ABR5423 </Col>
                 <Col>Tel:-0779990007</Col>
             </Row> 

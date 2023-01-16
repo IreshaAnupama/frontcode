@@ -23,38 +23,31 @@ const Home = () => {
               
 
         
-      
+            <div>
 
              <Fragment>
               <section className='home'>
               
                 <div className="text">
-                     <h3>Hello, Welcome to beeline courier service</h3>
-                      <div className="wrapper">
-                        <div className="fixed-text"><h2>We are </h2></div>
-                        <div className="moving-text">
-                            <li><h2>Fastest</h2><h2>Fastest</h2></li>
-                            
-                           
-                        </div>
+                     <h1>Hello,<br></br> Welcome to beeline courier service</h1>
         
                       </div>
-                      <p>
-                       we use Smart route technology for our courier team.
-                        we will protect your parcel until you receive
-                      </p>
-                    </div>
+                     
       
               </section>
              </Fragment>
-
-             <div bac>
-
              </div>
+             <div className='marginfix' style={{color:"purple"}}>
+                      <p >
+                       we use Smart route technology for our courier team.
+                        we will protect your parcel until you receive your parcel
+                      </p>
+                    </div>
+
               
      
       
-      <div><Footer></Footer></div></>
+      <div className='marginfix2'><Footer className="fixed-bottom"></Footer></div></>
   )     
         
 }

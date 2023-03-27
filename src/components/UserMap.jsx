@@ -1,7 +1,5 @@
-
-
 import React from 'react'
-import { GoogleMap, useJsApiLoader,Marker } from '@react-google-maps/api';
+import { GoogleMap, useJsApiLoader,Marker,useLoadScript } from '@react-google-maps/api';
 
 const containerStyle = {
   width: '100%',
@@ -21,6 +19,12 @@ function MyComponent() {
 
   const [map, setMap] = React.useState(null)
 
+  const [coordinates, setCoordinates] = useState({lat:37.7749, lng:-122.4194});
+
+  const handleDragEnd =(e) => {
+    setCoordinates({lat:e.latLng.lat(), lng:e.latLng.lng()});
+  }
+
   const onLoad = React.useCallback(function callback(map) {
     
     const bounds = new window.google.maps.LatLngBounds(center);
@@ -33,6 +37,7 @@ function MyComponent() {
     setMap(null)
   }, [])
 
+  
   return isLoaded ? (
       <GoogleMap
         mapContainerStyle={containerStyle}
@@ -43,6 +48,9 @@ function MyComponent() {
         
       >
         { <Marker
+          position={center}
+          onDragEnd={handleDragEnd}
+          draggable={true}
       
     />/* Child components, such as markers, info windows, etc. */ }
         <></>

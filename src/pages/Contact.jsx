@@ -5,6 +5,9 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import TopNav from '../components/TopNav';
 import Footer from '../components/Footer';
+import InputBoxContact from '../components/InputBoxContact';
+
+
 
 const Contact = () => {
   const handleSubmit=() =>{
@@ -13,6 +16,7 @@ const Contact = () => {
   const handleInputChange=() =>{
 
   }
+
   return (
     <><div><TopNav></TopNav></div>
     <div /*class="contactbody" */ >
@@ -32,36 +36,17 @@ const Contact = () => {
                       onSubmit={handleSubmit}
                     >
                       <div className="row">
-                        <div className="col-md-12">
-                          <div className="form-group">
-                            <input
-                              type="text"
-                              className="form-control"
-                              name="name"
-                              placeholder="Name"
-                              onChange={handleInputChange} />
-                          </div>
+                        <div>
+                           <InputBoxContact type='text' name='Name'/>
+
                         </div>
-                        <div className="col-md-12">
-                          <div className="form-group">
-                            <input
-                              type="email"
-                              className="form-control"
-                              name="email"
-                              placeholder="Email"
-                              onChange={handleInputChange} />
-                          </div>
+                        <div>
+                           <InputBoxContact type='email' name='Email'/>
                         </div>
-                        <div className="col-md-12">
-                          <div className="form-group">
-                            <input
-                              type="text"
-                              className="form-control"
-                              name="subject"
-                              placeholder="Subject"
-                              onChange={handleInputChange} />
-                          </div>
+                        <div>
+                           <InputBoxContact type='text' name='Subject'/>
                         </div>
+          
                         <div className="col-md-12">
                           <div className="form-group">
                             <textarea
@@ -95,51 +80,30 @@ const Contact = () => {
                       We're open for any suggestion or just to have a chat
                     </p>
                     <div className="dbox w-100 d-flex align-items-start">
-                      <div className="icon d-flex align-items-center justify-content-center">
-                        <span className="fa fa-map-marker"></span>
-                      </div>
+                      
                       <div className="text pl-3">
-                        <p>
+                   <p>
                           <span>Address:</span> 198 West 21th Street, Suite 721
                           New York NY 10016
-                        </p>
-                      </div>
-                    </div>
-                    <div className="dbox w-100 d-flex align-items-center">
-                      <div className="icon d-flex align-items-center justify-content-center">
-                        <span className="fa fa-phone"></span>
-                      </div>
-                      <div className="text pl-3">
-                        <p>
+                    </p>
+                    <p>
                           <span>Phone:</span>
                           <a href="tel://123456789">+1235 2355 98</a>
-                        </p>
-                      </div>
-                    </div>
-                    <div className="dbox w-100 d-flex align-items-center">
-                      <div className="icon d-flex align-items-center justify-content-center">
-                        <span className="fa fa-paper-plane"></span>
-                      </div>
-                      <div className="text pl-3">
-                        <p>
+                      </p>
+                      <p>
                           <span>Email:</span>
                           <a href="mailto:info@yoursite.com">
                             info@yoursite.com
                           </a>
                         </p>
-                      </div>
-                    </div>
-                    <div className="dbox w-100 d-flex align-items-center">
-                      <div className="icon d-flex align-items-center justify-content-center">
-                        <span className="fa fa-globe"></span>
-                      </div>
-                      <div className="text pl-3">
                         <p>
                           <span>Facebook :</span>
                           <a href="facebook.com">site.facebook</a>
                         </p>
-                      </div>
-                    </div>
+
+                        </div>
+                        </div>
+                    
                   </div>
                 </div>
               </div>

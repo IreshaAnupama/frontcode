@@ -19,6 +19,7 @@ import OrderOfShedule from './driverPages/OrderOfShedule';
 import Eamplemap from './components/Eamplemap';
 import ParcelList from './userPages/ParcelList';
 import UserProfile from './userPages/UserProfile';
+import AddParcel from './pages/AddParcel';
 
 
   const router = createBrowserRouter([
@@ -74,6 +75,10 @@ import UserProfile from './userPages/UserProfile';
     {
       path:"/userProfile",
       element:<UserProfile/>
+    },
+    {
+      path:"/addParcel",
+      element:<AddParcel/>
     }
 
   ])

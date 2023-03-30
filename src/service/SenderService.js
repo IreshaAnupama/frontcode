@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const CREATE_PICKUP_REQUEST="http://localhost:8080/user/addpickup";
+const CREATE_PICKUP_REQUEST="http://localhost:8080/user/addparcel";
 
 
 

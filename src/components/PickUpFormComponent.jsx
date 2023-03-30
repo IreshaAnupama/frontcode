@@ -9,8 +9,9 @@ import Button from 'react-bootstrap/Button';
 import { vehicleTypes,districts,paymentTypes,postMethods,cities } from './SelectList';
 import SenderService from '../service/SenderService';
 import { Link } from 'react-router-dom';
+import {withRouter} from '../supportiveFiles/withRouter';
 
-export default class PickUpFormComponent extends Component {
+class PickUpFormComponent extends Component {
     constructor(props){
         super(props)
 
@@ -35,7 +36,8 @@ export default class PickUpFormComponent extends Component {
             vehicleType:'',
             postMethod:'',
             paymentType:'',
-            spetialNote:''
+            spetialNote:'',
+            cost: 0
 
         }
         this.changeSenderPhoneHandler=this.changeSenderPhoneHandler.bind(this);
@@ -59,6 +61,7 @@ export default class PickUpFormComponent extends Component {
         this.changeTimeFromHandler=this.changeTimeFromHandler.bind(this);
         this.changeTimeToHandler=this.changeTimeToHandler.bind(this);
         this.changePostMethodeHandler=this.changePostMethodeHandler.bind(this);
+        this.changeCostHandler=this.changeCostHandler.bind(this);
 
      
       }
@@ -141,6 +144,10 @@ export default class PickUpFormComponent extends Component {
 
     }
 
+    changeCostHandler=(event)=>{
+      this.setState({cost:event.target.value});
+    }
+
 
 //save method add pickup
     savePickup=(e) => {
@@ -165,13 +172,16 @@ export default class PickUpFormComponent extends Component {
         postMethod: this.state.postMethod,
         vehicleType: this.state.vehicleType,
         paymentType: this.state.paymentType,
-        spetialNote: this.state.spetialNote
+        spetialNote: this.state.spetialNote,
+        cost: this.state.cost
       };
       
-      console.log('pickup =>' +JSON.stringify(pickup));
+      //console.log('pickup =>' +JSON.stringify(pickup));
 
       SenderService.addPickup(pickup).then(res =>{
-         // this.props.history.push(); ///this not work
+        //console.log(pickup);
+          this.props.navigate("/pickupConformComponent",{state:{pickup}}) 
+        
         });
     }
 
@@ -424,6 +434,15 @@ export default class PickUpFormComponent extends Component {
           onChange={this.changeSpetialNoteHandler} />
         </FloatingLabel>
       </Col>
+
+      <Col md>
+        <FloatingLabel controlId="floatingInputGrid" label="Cost of parcel">
+          <Form.Control type="text" 
+          placeholder="Cost"
+          value={this.state.cost} 
+          onChange={this.changeCostHandler} />
+        </FloatingLabel>
+      </Col>
       </Row>
 
      <br></br>
@@ -444,5 +463,7 @@ export default class PickUpFormComponent extends Component {
   }
   
     }
+
+    export default withRouter(PickUpFormComponent)
 
  

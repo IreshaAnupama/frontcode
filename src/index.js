@@ -21,6 +21,7 @@ import ParcelList from './userPages/ParcelList';
 import UserProfile from './userPages/UserProfile';
 import AddParcel from './pages/AddParcel';
 import PickUpFormComponent from './components/PickUpFormComponent';
+import PickupConformComponent from './components/PickupConformComponent';
 
   const router = createBrowserRouter([
     {
@@ -83,6 +84,10 @@ import PickUpFormComponent from './components/PickUpFormComponent';
     {
       path:"/pickUpFormComponent",
       element:<PickUpFormComponent/>
+    },
+    {
+      path:"/pickupConformComponent",
+      element:<PickupConformComponent/>
     }
 
   ])

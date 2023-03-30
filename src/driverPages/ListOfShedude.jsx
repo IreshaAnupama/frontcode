@@ -93,8 +93,8 @@ function ListOfShedule() {
         <Accordion.Header>
              <Row>
                 <Col>No : 03</Col>
-                <Col>Item no-ABR5423 </Col>
-                <Col>Tel:-0779990007</Col>
+                <Col>ItemNo :ABR5423 </Col>
+                <Col>Tel: 0779990007</Col>
             </Row> 
         </Accordion.Header>
         <Accordion.Body>

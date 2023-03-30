@@ -12,7 +12,7 @@ export default class AddParcelComponent extends Component {
         super(props)
 
         this.state={
-            customerPhoneNo:'',
+            senderPhoneNo:'',
             cost:'',
             postMethod:'',
             length:'',
@@ -27,6 +27,11 @@ export default class AddParcelComponent extends Component {
 
         }
     }
+
+    changeRecieverPhoneHandler=(event)=>{
+        this.setState({senderPhoneNo:event.target.value});
+    }
+
   render() {
     return (
       <div>
@@ -40,7 +45,8 @@ export default class AddParcelComponent extends Component {
       <Row className="mb-3">
         <Form.Group as={Col} controlId="formGridPhone">
           <Form.Label>Reciever Phone number</Form.Label>
-          <Form.Control placeholder="Enter Reciever's Phone number" />
+          <Form.Control placeholder="Enter Reciever's Phone number" 
+            value={this.state.recieverPhoneNo} onChange={this.changeRecieverPhoneHandler}/>
         </Form.Group>
 
         <Form.Group as={Col} controlId="formGridCost">
@@ -119,6 +125,7 @@ export default class AddParcelComponent extends Component {
         <Form.Check type="checkbox" label="Check me out" />
       </Form.Group>
 
+      <br></br>
       <Button variant="primary" type="submit">
         Submit
       </Button>

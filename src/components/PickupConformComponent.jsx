@@ -7,7 +7,7 @@ function PickupConformComponent() {
     //console.log('pickup =>' +JSON.stringify());
   return (
     <div>
-        utdcujgvb
+        PickUpFormComponent
     </div>
   )
 }

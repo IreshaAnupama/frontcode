@@ -3,8 +3,9 @@ import { useLocation } from 'react-router-dom';
 
 function PickupConformComponent() {
   const location=useLocation();
+  //const parcel=location.state.pickup;
     console.log(location.state.pickup.cost);
-    //console.log('pickup =>' +JSON.stringify());
+    console.log('location.state.pickup=>' +JSON.stringify());
   return (
     <div>
         utdcujgvb

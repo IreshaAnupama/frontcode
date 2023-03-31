@@ -8,7 +8,7 @@ function PickupConformComponent() {
     console.log('location.state.pickup=>' +JSON.stringify());
   return (
     <div>
-        utdcujgvb
+        PickUpFormComponent
     </div>
   )
 }

@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup'
 
-import profile1 from '../img/profile1.png';
+import profile1 from '../../img/profile1.png';
 
 function ListOfShedule() {
   return (

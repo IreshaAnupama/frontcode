@@ -6,17 +6,38 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Nav from 'react-bootstrap/Nav';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
-const Signing = () => {
+function  Signing(props){
+
+  const location=useLocation();
+  console.log(location);
+  const coordinate=location.state?.data;
+  const displayString= location.state?.success;
+  console.log(displayString);
+  
+
   return (
-    <><div><TopNav></TopNav></div><div className='bg-sign'>
+    <><div><TopNav></TopNav></div>
+   
+    
+    <div className='bg-sign'>
     <div className='wrapper  d-flex align-items-center justify-content-center w-100'>
       <div className='login' >
         <h2 className='mb-3'>Sign in here </h2>
         
         <Form>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+
+        <div><InputGroup className="mb-4">
+    <Form.Control placeholder={displayString}disabled />
+        <Nav.Link href="/userMap">
+        <Button variant="outline-secondary" id="button-addon2">
+          Enter your location
+        </Button></Nav.Link>
+      </InputGroup></div>
+
+
+        <Form.Group className="mb-3" controlId="formBasicTell">
       <Form.Label>Phone number</Form.Label>
       <Form.Control type="text" placeholder="Enter your phone number" />
       <Form.Text className="text-muted">
@@ -36,13 +57,7 @@ const Signing = () => {
     <Form.Group className="mb-3" controlId="formBasicCheckbox">
       <Form.Check type="checkbox" label="Show password" />
     </Form.Group>
-    <div><InputGroup className="mb-4">
-    <Form.Control placeholder="ocation ID" disabled />
-        <Nav.Link href="/userMap">
-        <Button variant="outline-secondary" id="button-addon2">
-          Enter your location
-        </Button></Nav.Link>
-      </InputGroup></div>
+   
       <Button variant="primary" type="submit">
       Sign as User
     </Button>{'  '}

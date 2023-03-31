@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 
-import logo from '../img/logo.png';
+import logo from '../../img/logo.png';
 
 export const NavbarUser = () => {
   return (

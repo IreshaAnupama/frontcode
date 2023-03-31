@@ -6,10 +6,11 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
-import { vehicleTypes,districts,paymentTypes,postMethods,cities } from './SelectList';
+import { vehicleTypes,districts,paymentTypes,postMethods,cities } from '../supportiveFiles/SelectList';
 import SenderService from '../service/SenderService';
 import { Link } from 'react-router-dom';
 import {withRouter} from '../supportiveFiles/withRouter';
+import PickupConformComponent from './PickupConformComponent';
 
 class PickUpFormComponent extends Component {
     constructor(props){
@@ -185,6 +186,9 @@ class PickUpFormComponent extends Component {
         });
     }
 
+      cancel(){
+        this.props.history.push("/PickupConformComponent");
+      }
     
 
 
@@ -448,7 +452,8 @@ class PickUpFormComponent extends Component {
      <br></br>
       <Button className="btn btn-success" onClick={this.savePickup}> Check Out
       </Button>
-    
+      <Button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft:"10px"}}> Cancel
+      </Button>
       
       
      

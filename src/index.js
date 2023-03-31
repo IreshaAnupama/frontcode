@@ -13,12 +13,12 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Signing from './pages/Signing';
 import UserMap from './pages/MapForUser';
-import DriverProfile from'./driverPages/DriverProfile';
-import Imageexample from './driverPages/Imageexample';
-import OrderOfShedule from './driverPages/OrderOfShedule';
+import DriverProfile from'./pages/driverPages/DriverProfile';
+import Imageexample from './pages/driverPages/Imageexample';
+import OrderOfShedule from './pages/driverPages/OrderOfShedule';
 import Eamplemap from './components/Eamplemap';
-import ParcelList from './userPages/ParcelList';
-import UserProfile from './userPages/UserProfile';
+import ParcelList from './pages/userPages/ParcelList';
+import UserProfile from './pages/userPages/UserProfile';
 import AddParcel from './pages/AddParcel';
 import PickUpFormComponent from './components/PickUpFormComponent';
 import PickupConformComponent from './components/PickupConformComponent';
@@ -26,7 +26,7 @@ import PickupConformComponent from './components/PickupConformComponent';
   const router = createBrowserRouter([
     {
       path:"/",
-      element: <App/>
+      element: <Home/>
     },
     {
       path:"/home",

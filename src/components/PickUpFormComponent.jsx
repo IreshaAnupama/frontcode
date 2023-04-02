@@ -10,7 +10,7 @@ import { vehicleTypes,districts,paymentTypes,postMethods,cities } from '../suppo
 import SenderService from '../service/SenderService';
 import { Link } from 'react-router-dom';
 import {withRouter} from '../supportiveFiles/withRouter';
-import PickupConformComponent from './PickupConformComponent';
+
 
 class PickUpFormComponent extends Component {
     constructor(props){
@@ -179,12 +179,12 @@ class PickUpFormComponent extends Component {
       
       //console.log('pickup =>' +JSON.stringify(pickup));
 
-      SenderService.addPickup(pickup).then(res =>{
+      //SenderService.addPickup(pickup).then(res =>{
         //console.log(pickup);
           this.props.navigate("/pickupConformComponent",{state:{pickup}}) 
         
-        });
-    }
+        //});
+      }
 
       cancel(){
         this.props.history.push("/PickupConformComponent");
@@ -450,6 +450,7 @@ class PickUpFormComponent extends Component {
       </Row>
 
      <br></br>
+     
       <Button className="btn btn-success" onClick={this.savePickup}> Check Out
       </Button>
       <Button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft:"10px"}}> Cancel

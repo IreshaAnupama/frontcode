@@ -9,7 +9,7 @@ import './Pages.css';
 
 import { GoogleMap, useJsApiLoader,Marker,useLoadScript } from '@react-google-maps/api';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const containerStyle = {
   width: '100%',
@@ -17,7 +17,10 @@ const containerStyle = {
 };
 
 
-function MapForUser ({callback}) {
+function MapForUser (props) {
+
+  const pathForPage=useLocation().state?.data;
+  console.log(pathForPage);
   const { isLoaded } = useJsApiLoader({
     id: 'my-project-cs304-371916',
     googleMapsApiKey: "AIzaSyD0Zw3uHJdRndDSN5OnCa1aflSbltWKtzg"
@@ -35,7 +38,7 @@ function MapForUser ({callback}) {
   const onLoad = React.useCallback(function callback(map) {
     
     const bounds = new window.google.maps.LatLngBounds(coordinates);
-    map.fitBounds(bounds);
+   map.fitBounds(bounds);
 
     setMap(map)
   }, [])
@@ -50,7 +53,16 @@ function MapForUser ({callback}) {
     <><div><TopNav></TopNav></div>
          <Container>
           <Row>
-          <Link to="/Signing" state={{data: coordinates,success}} className="Link">  <Button className="btn btn-success" > save location</Button></Link>
+            {pathForPage===1?
+          <Link to="/signing"  state={{data: coordinates,success}} className="Link">
+            <Button className="btn btn-success" > save location</Button></Link>
+              :
+              <Link to="/driverProfile"  state={{data: coordinates,success}} className="Link">
+            <Button className="btn btn-success" > save location</Button>
+            <Button className="btn btn-danger"  style={{marginLeft:"10px"}}> Cancel
+      </Button>
+            </Link>
+          }
       
       </Row>
    

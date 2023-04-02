@@ -11,25 +11,27 @@ import { Link, useLocation } from 'react-router-dom';
 function  Signing(props){
 
   const location=useLocation();
-  console.log(location);
+  //console.log(location);
   const coordinate=location.state?.data;
   const displayString= location.state?.success;
-  const lat=coordinate.lat;
-  const lng=coordinate.lng;
-  console.log(lat);
+  //const lat=coordinate.lat;
+  //const lng=coordinate.lng;
+  
   
 
   const [details,setDetails]=useState({
         phoneNo:"",
         email:"",
         password:"",
-        latitude:lat,
-        longatitude:lng,
+        latitude:"",
+        longatitude:"",
 
   });
   
   const handleChange=(e) => {
     const{name,value} = e.target;
+    details.longatitude=coordinate.lng;
+    details.latitude=coordinate.lat;
     setDetails((prev) => {
       return { ...prev,[name]:value};
 
@@ -55,10 +57,10 @@ function  Signing(props){
 
         <div><InputGroup className="mb-4">
     <Form.Control placeholder={displayString}disabled />
-        <Nav.Link href="/userMap">
+        <Link to="/userMap" state={{data:1}} className="Link">
         <Button variant="outline-secondary" id="button-addon2">
           Enter your location
-        </Button></Nav.Link>
+        </Button></Link>
       </InputGroup></div>
 
 
@@ -87,10 +89,10 @@ function  Signing(props){
       Sign as User
     </Button>{'  '}
 
-    <Link to={"/driverProfile"}><Button variant="primary" type="submit">
+    <Link to={"/driverProfile"} state={{data:details}} className="Link"><Button variant="primary" type="submit">
       Sign as Driver
     </Button></Link>
-    
+   
   </Form>
   </div>
         

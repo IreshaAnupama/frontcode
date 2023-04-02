@@ -9,8 +9,12 @@ import Button from 'react-bootstrap/Button';
 
 import Figure from 'react-bootstrap/Figure';
 import aboutimg2 from '../../img/image1.jpg';
+import { useLocation } from 'react-router-dom';
 
-const driverProfile = () => {
+function DriverProfile (props){
+  const customer=useLocation().state?.data;
+
+  console.log(customer);
   return (
     <><div><DriverNavbar></DriverNavbar></div>
     <div><InputGroup className="mb-4">
@@ -93,13 +97,13 @@ const driverProfile = () => {
         
     <Form.Group className="mb-3" controlId="formBasicEmail">
       <Form.Label>Email address</Form.Label>
-      <Form.Control type="email" placeholder="Enter email" />
+      <Form.Control type="email" placeholder={customer.email} />
       
     </Form.Group>
 
     <Form.Group className="mb-3" controlId="formBasicPassword">
       <Form.Label>Phone Number</Form.Label>
-      <Form.Control type="text" placeholder="enter your pass word" />
+      <Form.Control type="text" placeholder={customer.phoneNo} />
     </Form.Group>
     
             <Form.Group className="mb-3" controlId="formBasicText">
@@ -126,7 +130,7 @@ const driverProfile = () => {
   )
 }
 
-export default driverProfile
+export default DriverProfile
 
 /*<Form>
     <Form.Group className="mb-3" controlId="formBasicEmail">

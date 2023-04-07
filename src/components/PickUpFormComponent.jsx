@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/esm/Container';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
+
 import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
 import { vehicleTypes,districts,paymentTypes,postMethods,cities } from '../supportiveFiles/SelectList';
@@ -21,14 +22,14 @@ class PickUpFormComponent extends Component {
             senderName:'',
             senderEmail:'',
             senderAddress:'',
-            senderCity:'',
+            senderPostalCode:'',
             senderDistrict:'',
 
             receiverPhoneNo:'',
             receiverName:'',
             receiverAddress:'',
             receiverDistrict:'',
-            receiverCity:'',
+            receiverPostalCode:'',
 
           //"12:12 AM" 'Date("11/24/2021")'
             timeFrom: '',
@@ -44,7 +45,7 @@ class PickUpFormComponent extends Component {
         this.changeSenderPhoneHandler=this.changeSenderPhoneHandler.bind(this);
         this.changeSenderNameHandler=this.changeSenderNameHandler.bind(this);
         this.changeSenderAddressHandler=this.changeSenderAddressHandler.bind(this);
-        this.changeSenderCityHandler=this.changeSenderCityHandler.bind(this);
+        this.changeSenderPostalCodeHandler=this.changeSenderPostalCodeHandler.bind(this);
         this.changeSenderEmailHandler=this.changeSenderEmailHandler.bind(this);
         this.changeSenderDistrictHandler=this.changeSenderDistrictHandler.bind(this);
 
@@ -52,7 +53,7 @@ class PickUpFormComponent extends Component {
         this.changeReceiverNameHandler=this.changeReceiverNameHandler.bind(this);
         this.changeReceiverAddressHandler=this.changeReceiverAddressHandler.bind(this);
         this.changeReceiverDistrictHandler=this.changeReceiverDistrictHandler.bind(this);
-        this.changeReceiverCityHandler=this.changeReceiverCityHandler.bind(this);
+        this.changeReceiverPostalCodeHandler=this.changeReceiverPostalCodeHandler.bind(this);
 
 
         this.changePaymentTypeHandler=this.changePaymentTypeHandler.bind(this);
@@ -83,15 +84,15 @@ class PickUpFormComponent extends Component {
         this.setState({senderAddress:event.target.value});
     }
 
-    changeSenderCityHandler=(event)=>{
-        this.setState({senderCity:event.target.value});
+    changeSenderPostalCodeHandler=(event)=>{
+        this.setState({senderPostalCode:event.target.value});
     }
 
     changeSenderDistrictHandler=(event)=>{
         this.setState({senderDistrict:event.target.value});
     }
 
-// Receiver Handler
+// Receiver Handler 
 
     changeReceiverPhoneHandler=(event)=>{
         this.setState({receiverPhoneNo:event.target.value});
@@ -109,8 +110,8 @@ class PickUpFormComponent extends Component {
         this.setState({receiverDistrict:event.target.value});
     }
 
-    changeReceiverCityHandler=(event)=>{
-      this.setState({receiverCity:event.target.value});
+    changeReceiverPostalCodeHandler=(event)=>{
+      this.setState({receiverPostalCode:event.target.value});
   }
 
 // Pickup Handler
@@ -158,14 +159,14 @@ class PickUpFormComponent extends Component {
         senderName: this.state.senderName, 
         senderEmail: this.state.senderEmail,
         senderAddress: this.state.senderAddress,
-        senderCity: this.state.senderCity,
+        senderPostalCode: this.state.senderPostalCode,
         senderDistrict: this.state.senderDistrict,
 
         receiverPhoneNo: this.state.receiverPhoneNo,
         receiverName: this.state.receiverName,
         receiverAddress: this.state.receiverAddress,
         receiverDistrict: this.state.receiverDistrict,
-        receiverCity: this.state.receiverCity,
+        receiverPostalCode: this.state.receiverPostalCode,
 
         pickupDate: this.state.pickupDate,
         timeFrom: this.state.timeFrom,
@@ -252,16 +253,11 @@ class PickUpFormComponent extends Component {
       </Col>
 
       <Col md>
-        <FloatingLabel
-          controlId="floatingSelectGrid"
-          label="Sender's City"
-        >
-          <Form.Select aria-label="Floating label select example"
-          value={this.state.senderCity} onChange={this.changeSenderCityHandler}>
-            {cities.map((city) => (
-              <option value={city.value}>{city.label}</option>
-            ))}
-          </Form.Select>
+      <FloatingLabel controlId="floatingInputGrid" label="Sender Postal Code">
+          <Form.Control type="text" 
+          placeholder="Postal code"
+          value={this.state.senderPostalCode} 
+          onChange={this.changeSenderPostalCodeHandler} />
         </FloatingLabel>
       </Col>
 
@@ -320,16 +316,11 @@ class PickUpFormComponent extends Component {
       </Col>
 
       <Col md>
-        <FloatingLabel
-          controlId="floatingSelectGrid"
-          label="Reciever City"
-        >
-          <Form.Select aria-label="Floating label select example"
-          value={this.state.receiverCity} onChange={this.changeReceiverCityHandler}>
-            {cities.map((city) => (
-              <option value={city.value}>{city.label}</option>
-            ))}
-          </Form.Select>
+      <FloatingLabel controlId="floatingInputGrid" label="reciever Postal Code">
+          <Form.Control type="text" 
+          placeholder="Postal code"
+          value={this.state.receiverPostalCode} 
+          onChange={this.changeReceiverPostalCodeHandler} />
         </FloatingLabel>
       </Col>
 

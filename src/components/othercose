@@ -1,0 +1,11 @@
+<FloatingLabel
+          controlId="floatingSelectGrid"
+          label="Sender's City"
+        >
+          <Form.Select aria-label="Floating label select example"
+          value={this.state.senderCity} onChange={this.changeSenderCityHandler}>
+            {cities.map((city) => (
+              <option value={city.value}>{city.label}</option>
+            ))}
+          </Form.Select>
+        </FloatingLabel>

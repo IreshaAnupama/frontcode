@@ -17,19 +17,29 @@ export const  cities = [
 ];
 
 export const  paymentTypes = [
+  {
+    id :0,
+      value: "--Choose--",
+      label: "--Choose--",
+  },
     {
-      id :0,
+      id :1,
         value: "Cash On Delevery",
         label: "Cash On Delevery",
     },
     {
-      id :1,
+      id :2,
       label: "Cash",
       value: "Cash",
     },
 ];
 
 export const  vehicleTypes = [
+  {
+    id :3,
+      value: "--Choose--",
+      label: "--Choose--",
+  },
     {
       id :0,
         value: "Bike",
@@ -43,6 +53,11 @@ export const  vehicleTypes = [
 ];
 
 export const  postMethods = [
+  {
+    id :5,
+      value: "--Choose--",
+      label: "--Choose--",
+  },
     {
       id :0,
       label: "Same Day",
@@ -71,6 +86,11 @@ export const  postMethods = [
   ];
 
   export const districts = [
+    {
+      id :26,
+        value: "--Choose--",
+        label: "--Choose--",
+    },
     {
       id :0,
       label: "Colombo",

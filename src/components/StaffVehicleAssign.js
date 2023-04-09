@@ -36,8 +36,10 @@ function StaffVehicleAssign() {
       e.preventDefault();
       const id=name.parcel.parcelId;
       const result=await axios.patch("http://localhost:8080/user/"+id,vehicle).then(() => window.location.reload());
+     
       console.log(vehicle);
      
+      
      
     };
   return (

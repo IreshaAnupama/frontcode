@@ -120,12 +120,12 @@
    /*signing page */
   .bg-sign{
     
-
+    padding: 20;
     background-image:url(../img/signBg.jpg) ;
-    background-position: center;
-    background-size: cover;
+    /*background-position: center;*/
+    background-size: 100%;
     background-repeat: no-repeat;
-    height: 100vh;
+    
   
 
 }

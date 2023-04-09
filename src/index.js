@@ -23,6 +23,7 @@ import AddParcel from './pages/AddParcel';
 import PickUpFormComponent from './components/PickUpFormComponent';
 import PickupConformComponent from './components/PickupConformComponent';
 import VehicleAssign from './pages/staf/VehicleAssign';
+import DriverSigning from './pages/driverPages/DriverSigning';
 
   const router = createBrowserRouter([
     {
@@ -93,7 +94,11 @@ import VehicleAssign from './pages/staf/VehicleAssign';
     {
       path:"/vehicleAssign",
       element:<VehicleAssign/>
-    }
+    },
+    {
+      path:"/driverSigning",
+      element:<DriverSigning/>
+    },
 
   ])
 

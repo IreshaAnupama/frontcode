@@ -49,19 +49,27 @@ function MapForUser (props) {
 
   const success="location saved";
 
+
+
   return isLoaded ? (
     <><div><TopNav></TopNav></div>
          <Container>
           <Row>
+          <input style={{width:"100px"}}
+            id="pac-input"
+            class="controls"
+            type="text"
+            placeholder="Search Box"
+          />          
             {pathForPage===1?
           <Link to="/signing"  state={{data: coordinates,success}} className="Link">
-            <Button className="btn btn-success" > save location</Button></Link>
+            <Button className="btn btn-success inline" > save location</Button></Link>
               :
               <Link to="/driverProfile"  state={{data: coordinates,success}} className="Link">
             <Button className="btn btn-success" > save location</Button>
             <Button className="btn btn-danger"  style={{marginLeft:"10px"}}> Cancel
-      </Button>
-            </Link>
+          </Button>
+          </Link>
           }
       
       </Row>

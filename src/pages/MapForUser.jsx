@@ -12,7 +12,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const containerStyle = {
-  width: '100%',
+  width: '100px',
   height: '800px'
 };
 
@@ -67,7 +67,7 @@ function MapForUser (props) {
       </Row>
    
       
-            <Row>
+       <Row>
         <div className="card col-md-10 ">
                
                <div className="card-body">

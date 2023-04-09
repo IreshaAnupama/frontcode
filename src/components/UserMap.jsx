@@ -1,4 +1,4 @@
-
+/*
 
 import React from 'react'
 import { GoogleMap, useJsApiLoader,Marker,useLoadScript } from '@react-google-maps/api';
@@ -52,11 +52,12 @@ function MyComponent() {
           position={coordinates}
           onDragEnd={handleDragEnd}
           draggable={true}
-      
-    />/* Child components, such as markers, info windows, etc. */ }
+          ></Marker> }
         <></>
       </GoogleMap>
   ) : <></>
 }
 
 export default React.memo(MyComponent)
+
+*/

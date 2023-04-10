@@ -6,7 +6,7 @@ export const withRouter = (Component) => {
 
     return (
       <Component
-        navigate={navigate}
+       navigate={navigate}
         {...props}
         />
     );

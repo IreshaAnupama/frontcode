@@ -1,6 +1,6 @@
 //  path:"/addParcel",
 import React from 'react'
-import AddParcelComponent from '../components/AddParcelComponent'
+import AddParcelComponent from '../components/customer/AddParcelComponent'
 import TopNav from '../components/TopNav'
 
 const AddParcel = () => {

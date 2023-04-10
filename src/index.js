@@ -20,8 +20,8 @@ import Eamplemap from './components/Eamplemap';
 import ParcelList from './pages/userPages/ParcelList';
 import UserProfile from './pages/userPages/UserProfile';
 import AddParcel from './pages/AddParcel';
-import PickUpFormComponent from './components/PickUpFormComponent';
-import PickupConformComponent from './components/PickupConformComponent';
+import PickUpFormComponent from './components/customer/PickUpFormComponent';
+import PickupConformComponent from './components/customer/PickupConformComponent';
 import VehicleAssign from './pages/staf/VehicleAssign';
 import DevelopEx from './DevelopEx';
 

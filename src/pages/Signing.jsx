@@ -87,7 +87,7 @@ function  Signing(props){
    
       <Button variant="primary" type="submit">
       Sign as User
-    </Button>{'  '}
+      </Button>{'  '}
 
     <Link to={"/driverProfile"} state={{data:details}} className="Link"><Button variant="primary" type="submit">
       Sign as Driver

@@ -2,7 +2,7 @@ import React from 'react'
 
 import Form from 'react-bootstrap/Form';
 
-import DriverNavbar from '../../components/DriverNavbar';
+import DriverNavbar from '../../components/Driver/DriverNavbar';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';

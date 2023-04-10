@@ -1,9 +1,9 @@
 import React from 'react'
-import SenderService from '../service/SenderService';
+import SenderService from '../../service/SenderService';
 import { useLocation } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
-import {withRouter} from '../supportiveFiles/withRouter';
+import {withRouter} from '../../supportiveFiles/withRouter';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/esm/Container';

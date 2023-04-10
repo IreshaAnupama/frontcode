@@ -7,10 +7,10 @@ import Form from 'react-bootstrap/Form';
 
 import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
-import { vehicleTypes,districts,paymentTypes,postMethods,cities } from '../supportiveFiles/SelectList';
-import SenderService from '../service/SenderService';
+import { vehicleTypes,districts,paymentTypes,postMethods,cities } from '../../supportiveFiles/SelectList';
+import SenderService from '../../service/SenderService';
 import { Link } from 'react-router-dom';
-import {withRouter} from '../supportiveFiles/withRouter';
+import {withRouter} from '../../supportiveFiles/withRouter';
 
 
 class PickUpFormComponent extends Component {

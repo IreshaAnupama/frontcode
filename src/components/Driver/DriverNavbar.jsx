@@ -5,9 +5,10 @@ import Navbar from 'react-bootstrap/Navbar';
 
 import 'bootstrap/dist/css/bootstrap.css'
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import './TopNav.css';
+import '../TopNav.css';
 
-import logo from '../img/logo.png';
+//import logo from '../img/logo.png';
+import logo from 'D:/management/frontcode/src/img/logo.png'
 
 
 const DriverNavbar = () => {

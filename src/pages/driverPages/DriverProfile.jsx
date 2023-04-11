@@ -30,18 +30,18 @@ function DriverProfile (props){
 });
 
 const handleChange=(e) => {
-const{name,value} = e.target;
-//console.log(name);
-details.fullName={[name]:value};
+  const{name,value} = e.target;
+//console.log({[name]:value});
+//details.fullName={[name.fullName]:value};
 //details.longatitude=coordinate.lng;
 //details.latitude=coordinate.lat;
-setDetails((prev) => {
-  return { ...prev,[name]:value};
-});
+  setDetails((prev) => {
+    return { ...prev,[name]:value};
+  });
 };
 const handleSubmit =(e) => {
-e.preventDefault();
-console.log(details);
+  e.preventDefault();
+  console.log(details);
 return
 };
   return (

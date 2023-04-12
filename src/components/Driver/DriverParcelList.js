@@ -46,10 +46,10 @@ function DriverParcelList() {
                     <td> {parcel.paymentType} </td>
                     <td> {parcel.specialNote} </td>
                     <td> {parcel.parcelCost} </td>
-                    <td> {parcel.deleveryCost} </td>
+                    <td> {parcel.deliveryCost} </td>
                   </tr>
                 ))}
-                ;
+                
               </tbody>
             </Table>
           </Col>

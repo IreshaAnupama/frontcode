@@ -2,7 +2,8 @@ import React from 'react'
 import TopNav from '../components/TopNav'
 import Footer from '../components/Footer';
 import './Pages.css';
-import image2 from '../img/aboutimg.jpg';
+
+import ListUserComponent from '../components/ListUserComponent';
 
 
 const About = () => {
@@ -10,7 +11,9 @@ const About = () => {
     <><div>
       <TopNav></TopNav>
     </div><div >
-    
+        <div className="container">
+          <ListUserComponent/>
+        </div>
        <h1> this web application create for the cs304 project</h1>
        <br></br>
        <h3>Aims</h3>

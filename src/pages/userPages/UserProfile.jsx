@@ -2,15 +2,16 @@ import React from 'react'
 
 import Form from 'react-bootstrap/Form';
 
-import DriverNavbar from '../components/DriverNavbar';
+import DriverNavbar from '../../components/Driver/DriverNavbar';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
 
 import Figure from 'react-bootstrap/Figure';
-import aboutimg2 from '../img/image1.jpg';
 
-const driverProfile = () => {
+import aboutimg2 from '../../img/image1.jpg';
+
+const UserProfile = () => {
   return (
     <><div><DriverNavbar></DriverNavbar></div>
     <div><InputGroup className="mb-4">
@@ -126,25 +127,4 @@ const driverProfile = () => {
   )
 }
 
-export default driverProfile
-
-/*<Form>
-    <Form.Group className="mb-3" controlId="formBasicEmail">
-      <Form.Label>Email address</Form.Label>
-      <Form.Control type="email" placeholder="Enter email" />
-      <Form.Text className="text-muted">
-        We'll never share your email with anyone else.
-      </Form.Text>
-    </Form.Group>
-
-    <Form.Group className="mb-3" controlId="formBasicPassword">
-      <Form.Label>Password</Form.Label>
-      <Form.Control type="password" placeholder="Password" />
-    </Form.Group>
-    <Form.Group className="mb-3" controlId="formBasicCheckbox">
-      <Form.Check type="checkbox" label="Show password" />
-    </Form.Group>
-    <Button variant="primary" type="submit">
-      Submit
-    </Button>
-  </Form>*/
+export default UserProfile

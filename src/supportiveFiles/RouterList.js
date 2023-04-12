@@ -17,6 +17,7 @@ import VehicleAssign from '../pages/staf/VehicleAssign';
 import DevelopEx from '../DevelopEx';
 import {createBrowserRouter} from "react-router-dom";
 import DriverListOfParcel from '../pages/driverPages/DriverListOfParcel';
+import CheckOut from '../pages/CheckOut';
   
 
   export const router = createBrowserRouter([
@@ -97,6 +98,11 @@ import DriverListOfParcel from '../pages/driverPages/DriverListOfParcel';
         path:"/driverListOfParecel",
         element:<DriverListOfParcel/>
       },
+      {
+        path:"/checkOut",
+        element:<CheckOut/>
+
+      }
           
 
 

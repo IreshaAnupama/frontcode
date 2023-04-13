@@ -18,6 +18,7 @@ import DevelopEx from '../DevelopEx.js';
 import {createBrowserRouter} from "react-router-dom";
 import DriverListOfParcel from '../pages/driverPages/DriverListOfParcel';
 import CheckOut from '../pages/CheckOut';
+import DriverSign from '../pages/driverPages/DriverSign';
   
 
   export const router = createBrowserRouter([
@@ -102,6 +103,10 @@ import CheckOut from '../pages/CheckOut';
         path:"/checkOut",
         element:<CheckOut/>
 
+      },
+      {
+        path:"/driverSign",
+        element:<DriverSign/>
       }
           
 

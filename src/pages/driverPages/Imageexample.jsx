@@ -1,48 +1,33 @@
-import Table from 'react-bootstrap/Table';
-import Card from 'react-bootstrap/Card';
-import './DriverCss.css';
+import { DistanceMatrixService } from '@react-google-maps/api';
+import { useState } from 'react';
+import { google } from '@react-google-maps/api';
+import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
+import { Button } from 'react-bootstrap';
+import axios from 'axios';
 
-function StripedRowExample() {
+function Imageexample() {
+
+  //https://cros-anywhere.herokuapp.com/
+  //Access-Control-Allow-Origin:
+
+  function handleClick(){
+    const URL='https://maps.googleapis.com/maps/api/distancematrix/json?origins=7.457272,79.825382&destinations=6.845450,79.958389|7.463590,79.850640&key=AIzaSyCAALkJistFQz8Q9Rm5qZro60hvjbcCvmM';
+    axios.get(URL)
+    .then(response=>{
+      console.log(response);
+    })
+    .catch(error => {
+      console.log(error.message);
+    });
+    
+
+  }
   return (
-    <div className="center-component">
-    <Card border="primary" style={{ width: '70rem' }}>
-    <Table striped>
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Time</th>
-          <th>Company name</th>
-          <th>Items</th>
-          <th>Curier information</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1 january 2023</td>
-          <td>1.00-2.00 pm</td>
-          <td>Viana</td>
-          <td><li>Shampoo :- 1</li><li>Conditioner :1</li></td>
-          <td><li>Name :- aaaaa </li><li>Vehicle No :- NL4322</li></td>
-        </tr>
-        <tr>
-          <td>1 january 2023</td>
-          <td>1.00-2.00 pm</td>
-          <td>Viana</td>
-          <td><li>Shampoo :- 1</li><li>Conditioner :1</li></td>
-          <td><li>Name :- aaaaa </li><li>Vehicle No :- NL4322</li></td>
-        </tr>
-        <tr>
-          <td>1 january 2023</td>
-          <td>1.00-3.00 pm</td>
-          <td>Viana</td>
-          <td><li>Shampoo :- 1</li><li>Conditioner :1</li></td>
-          <td><li>Name :- aaaaa </li><li>Vehicle No :- NL4322</li></td>
-        </tr>
-      </tbody>
-    </Table>
-    </Card>
-    </div>
+    <div>Imageexampl
+      e
+      <Button className="btn btn-success" onClick={handleClick}> save location</Button>
+   :</div>
   )
 }
 
-export default StripedRowExample;
+export default Imageexample

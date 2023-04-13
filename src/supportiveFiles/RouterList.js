@@ -14,7 +14,7 @@ import AddParcel from '../pages/AddParcel';
 import PickUpFormComponent from '../components/customer/PickUpFormComponent';
 import PickupConformComponent from '../components/customer/PickupConformComponent';
 import VehicleAssign from '../pages/staf/VehicleAssign';
-import DevelopEx from '../DevelopEx';
+import DevelopEx from '../DevelopEx.js';
 import {createBrowserRouter} from "react-router-dom";
 import DriverListOfParcel from '../pages/driverPages/DriverListOfParcel';
 import CheckOut from '../pages/CheckOut';

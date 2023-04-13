@@ -1,5 +1,5 @@
 import React from 'react'
-import AssignVehiles from '../../components/AssignVehiles'
+import AssignVehiles from '../../components/staff/AssignVehiles'
 
 function VehicleAssign() {
   return (

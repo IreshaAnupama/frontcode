@@ -9,6 +9,10 @@ class SenderService{
     addPickup(pickup){
         return axios.post(CREATE_PICKUP_REQUEST,pickup);
     }
+
+
+
+
 }
 
 export default new SenderService()

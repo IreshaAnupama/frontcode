@@ -66,6 +66,10 @@ console.log(pathForPage);
                    <Link to="/signing"  state={{data:selected,success}} className="Link">
                      <Button className="btn btn-success" > save location</Button></Link>
                        :
+                       pathForPage===2?
+                       <Link to="/driverSign"  state={{data:selected,success}} className="Link">
+                       <Button className="btn btn-success" > save location</Button></Link>
+                       :
                        <Link to="/driverProfile"  state={{data: selected,success}} className="Link">
                      <Button className="btn btn-success" > save location</Button>
                      <Button className="btn btn-danger"  style={{marginLeft:"10px"}}> Cancel

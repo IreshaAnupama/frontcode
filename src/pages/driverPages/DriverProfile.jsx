@@ -16,16 +16,18 @@ function DriverProfile (props){
   
   const [details,setDetails]=useState({
     fullName:"",
-    phoneNo:"",
-    userName:"",
-    email:"",
-    password:"",
-    latitude:"",
-    longatitude:"",
-    address:"",
-    district:"",
-    postalCode:"",
-    vehicleNo:"",
+    courierPhone: "",
+email: "",
+latitude: "",
+longitude: "",
+password: "",
+courierUserName: "",
+vehicleNo: "",
+address: "",
+district: "",
+postalCode1: "",
+postalCode2: "",
+postalCode3: "",
     
 });
 
@@ -96,7 +98,7 @@ return
                       <div class="col">
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                            <Form.Label>User Name</Form.Label>
-                           <Form.Control type="text" placeholder={customer.userName} name="userName" onChange={handleChange}/>
+                           <Form.Control type="text" placeholder={customer.courierUserName} name="courierUserName" onChange={handleChange}/>
                         </Form.Group>
           
       
@@ -123,12 +125,12 @@ return
 
                          <Form.Group className="mb-3" controlId="formBasicPassword">
                            <Form.Label>Phone Number</Form.Label>
-                           <Form.Control type="text" placeholder={customer.phoneNo} name="phoneNo" onChange={handleChange}/>
+                           <Form.Control type="text" placeholder={customer.courierPhone} name="courierPhone" onChange={handleChange}/>
                          </Form.Group>
 
                          <Form.Group className="mb-3" controlId="formBasicText">
                              <Form.Label>vehicle Number</Form.Label>
-                             <Form.Control type="text" placeholder={customer.vehicleNo} name="vehicleNo" onChange={handleChange}/>
+                             <Form.Control type="text" placeholder={customer.vehicleNo} name="vehicleNo:" onChange={handleChange}/>
                          </Form.Group>
                       </div>
                     </div>

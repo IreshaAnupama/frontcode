@@ -33,9 +33,11 @@ function StaffVehicleAssign() {
 
 
     const onSubmit =(name)=>async (e)=>{
+
       e.preventDefault();
       const id=name.parcel.parcelId;
-      const result=await axios.patch("http://localhost:8080/user/"+id,vehicle).then(() => window.location.reload());
+      const result=await axios.patch("http://localhost:8080/user/assign/"+id,vehicle).then(() => window.location.reload()
+      );
      
       console.log(vehicle);
      

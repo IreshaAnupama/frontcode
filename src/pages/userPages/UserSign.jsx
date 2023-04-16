@@ -7,66 +7,50 @@ import InputGroup from "react-bootstrap/InputGroup";
 import Nav from "react-bootstrap/Nav";
 import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { districts } from "../../supportiveFiles/SelectList";
-import DriverService from "../../service/DriverService";
-import Feedback from "react-bootstrap/esm/Feedback";
 import { Container, Row, Col } from "react-bootstrap";
 
-function DriverSign(props) {
+import SenderService from "../../service/SenderService";
+
+function UserSign(props) {
   const navigate = useNavigate();
 
-  const [validated, setValidated] = useState(false);
-  const click = false;
-
-  function driverClick() {
+  function customerClick() {
     if (validated === true) {
-      console.log("courier created");
-      DriverService.createDriver(details).then((res) => {
-        //console.log("courier created");
+      SenderService.createCustomer(details).then((res) => {
+        console.log(details);
+
         navigate("/driverProfile", { state: { data: details } });
       });
-    } else {
-      console.log("lllll");
     }
   }
+
+  const [validated, setValidated] = useState(false);
 
   const location = useLocation();
   //console.log(location);
   const coordinate = location.state?.data;
   const displayString = location.state?.success;
 
-  /*const [postalCode, setPostalCode] = useState({
-    postalCode1: "",
-    postaiCode2: "",
-    postaiCode3: "",
-  }); */
-
   const [details, setDetails] = useState({
-    courierPhone: "",
+    customerPhone: "",
+    customerUserName: "",
     email: "",
+    password: "",
     latitude: "",
     longitude: "",
-    password: "",
-    courierUserName: "",
-    vehicleNo: "",
     address: "",
     district: "",
-    postalCode1: "",
-    postalCode2: "",
-    postalCode3: "",
+    postalCode: "",
   });
-  /*const postalChange = (e) => {
-    const { name, value } = e.target;
-    setPostalCode((prev) => {
-      return { ...prev, [name]: value };
-    });
-  };*/
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
     if (coordinate != null) {
       details.longitude = coordinate.lat;
       details.latitude = coordinate.lng;
     }
+    const { name, value } = e.target;
+
+    //console.log(postalCode);
 
     setDetails((prev) => {
       return { ...prev, [name]: value };
@@ -74,10 +58,9 @@ function DriverSign(props) {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
     const form = e.currentTarget;
     if (form.checkValidity() === false) {
-      //e.preventDefault();
+      e.preventDefault();
       e.stopPropagation();
     }
     setValidated(true);
@@ -96,28 +79,27 @@ function DriverSign(props) {
             <h2 className="mb-3">Sign in here </h2>
             <Row>
               <Col>
-                <div>
-                  <InputGroup className="mb-4">
-                    <Form.Control placeholder={displayString} disabled />
-                    <Link to="/userMap" state={{ data: 2 }} className="Link">
-                      <Button variant="outline-secondary" id="button-addon2">
-                        Enter your location
-                      </Button>
-                    </Link>
-                  </InputGroup>
-                </div>
+                <InputGroup className="mb-4">
+                  <Form.Control placeholder={displayString} disabled />
+                  <Link to="/userMap" state={{ data: 1 }} className="Link">
+                    <Button variant="outline-secondary" id="button-addon2">
+                      Enter your location
+                    </Button>
+                  </Link>
+                </InputGroup>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
                 <Form.Group className="mb-3" controlId="formBasicTell">
                   <Form.Label>Phone number</Form.Label>
                   <Form.Control
-                    required
                     type="text"
                     placeholder="Enter your phone number"
-                    name="courierPhone"
+                    name="customerPhone"
+                    required
                     onChange={handleChange}
                   />
-                  <Form.Control.Feedback type="invalid">
-                    Please provide a valid Phone number.
-                  </Form.Control.Feedback>
                   <Form.Text className="text-muted">
                     We'll never share your phone number with anyone else.
                   </Form.Text>
@@ -126,31 +108,23 @@ function DriverSign(props) {
                 <Form.Group className="mb-3" controlId="formBasic">
                   <Form.Label>User name</Form.Label>
                   <Form.Control
-                    required
                     type="text"
                     placeholder="Enter User name"
-                    name="courierUserName"
+                    name="customerUserName"
                     onChange={handleChange}
                   />
-                  <Feedback type="invalid">
-                    {" "}
-                    Please provide a user name.
-                  </Feedback>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Label>Email address</Form.Label>
                   <Form.Control
-                    required
                     type="email"
                     placeholder="Enter email"
                     name="email"
                     onChange={handleChange}
                   />
-                  <Form.Control.Feedback type="invalid">
-                    Please provide a valid valid email.
-                  </Form.Control.Feedback>
                 </Form.Group>
+
                 <Form.Group className="mb-3" controlId="formBasicAddress">
                   <Form.Label>Vehicle Number</Form.Label>
                   <Form.Control
@@ -160,100 +134,57 @@ function DriverSign(props) {
                     onChange={handleChange}
                   />
                 </Form.Group>
-                <Form.Control.Feedback type="invalid">
-                  Please provide a valid valid Vehicle no
-                </Form.Control.Feedback>
               </Col>
               <Col>
                 <Form.Group className="mb-3" controlId="formBasicAddress">
                   <Form.Label>Address</Form.Label>
                   <Form.Control
-                    required
                     type="text"
                     placeholder="Enter Address"
                     name="address"
                     onChange={handleChange}
                   />
-                  <Form.Control.Feedback type="invalid">
-                    Please provide a valid address.
-                  </Form.Control.Feedback>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicDidtrict">
                   <Form.Label>District</Form.Label>
                   <Form.Select
-                    required
                     aria-label="Floating label select example"
                     name="district"
                     onChange={handleChange}
                   >
-                    <Form.Control.Feedback type="invalid">
-                      Please select a district
-                    </Form.Control.Feedback>
                     {districts.map((dis) => (
                       <option value={dis.value}>{dis.label}</option>
                     ))}
                   </Form.Select>
                 </Form.Group>
 
-                <Form.Group className="mb-3">
+                <Form.Group className="mb-3" controlId="formBasicPostal">
                   <Form.Label>Postal Codes you can work</Form.Label>
                   <Form.Control
-                    id="p1"
-                    required
                     type="text"
-                    placeholder="Enter first Postal code"
-                    name="postalCode1"
+                    placeholder="Enter Postal code"
+                    name="postalCode"
                     onChange={handleChange}
                   />
-                  <Feedback type="invalid">
-                    Please provide a valid Postal code.
-                  </Feedback>
-                  <Form.Control
-                    id="p2"
-                    required
-                    type="text"
-                    placeholder="Enter second Postal code"
-                    name="postalCode2"
-                    onChange={handleChange}
-                  />
-                  <Feedback type="invalid">
-                    Please provide a valid Postal code.
-                  </Feedback>
-                  <Form.Control
-                    id="p3"
-                    required
-                    type="text"
-                    placeholder="Enter third Postal code"
-                    name="postalCode3"
-                    onChange={handleChange}
-                  />
-                  <Feedback type="invalid">
-                    Please provide a valid Postal code.
-                  </Feedback>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                   <Form.Label>Password</Form.Label>
                   <Form.Control
-                    required
                     type="password"
                     placeholder="Password"
                     name="password"
                     onChange={handleChange}
                   />
-                  <Feedback type="invalid">Please provide a password.</Feedback>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                  <Form.Check
-                    type="checkbox"
-                    label="I agrree to term and conditions"
-                  />
+                  <Form.Check type="checkbox" label="Show password" />
                 </Form.Group>
 
-                <Button variant="primary" type="submit" onClick={driverClick}>
-                  Sign as Driver
+                <Button variant="primary" type="submit" onClick={customerClick}>
+                  Sign as Customer
                 </Button>
               </Col>
             </Row>
@@ -264,4 +195,4 @@ function DriverSign(props) {
   );
 }
 
-export default DriverSign;
+export default UserSign;

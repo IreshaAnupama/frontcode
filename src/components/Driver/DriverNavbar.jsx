@@ -24,22 +24,9 @@ const DriverNavbar = () => {
               <Nav.Link href="#features"></Nav.Link>
               <Nav.Link href="/home">Home</Nav.Link>
               <Nav.Link href="/contact">Contact</Nav.Link>
-
-              <NavDropdown title="services" id="collasible-nav-dropdown">
-                <NavDropdown.Item href="/UserMap">Maplocation</NavDropdown.Item>
-                <NavDropdown.Item href="/imageexample">
-                  Image Example
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Something
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Separated link
-                </NavDropdown.Item>
-              </NavDropdown>
             </Nav>
             <Nav>
+            <Nav.Link href="/driverParcelList">Parcel List</Nav.Link>
               <Nav.Link href="/orderofshedule">Shedule</Nav.Link>
               <Nav.Link href="/driverProfile">Profile</Nav.Link>
             </Nav>

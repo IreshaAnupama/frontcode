@@ -48,6 +48,7 @@ const Footer = () => {
           <FaEnvelope className='me-1'/> delevery@gmail.com
 
         </div>
+        <Nav.Link href="/vehicleAssign">Staff Only</Nav.Link>
 
     </div>
     </div>

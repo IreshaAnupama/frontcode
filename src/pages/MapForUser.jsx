@@ -21,7 +21,7 @@ import {Button, Row, Col} from 'react-bootstrap';
 
 export default function MapForUser() {
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey:"AIzaSyCAALkJistFQz8Q9Rm5qZro60hvjbcCvmM",
+    googleMapsApiKey:"AIzaSyDwtBza38O5StjIz7dPbWDcX8BK-JSD2z0",
     libraries: ["places"],
   });
 
@@ -63,7 +63,7 @@ console.log(pathForPage);
               </Col>
               <Col>
                 {pathForPage===1?
-                   <Link to="/signing"  state={{data:selected,success}} className="Link">
+                   <Link to="/userSign"  state={{data:selected,success}} className="Link">
                      <Button className="btn btn-success" > save location</Button></Link>
                        :
                        pathForPage===2?

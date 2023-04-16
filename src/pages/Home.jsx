@@ -7,10 +7,12 @@ import image1 from '../img/image1.jpg';
 import './Pages.css';
 
 import React,{Fragment} from 'react'
+import PickUpFormComponent from '../components/customer/PickUpFormComponent';
+import { Container } from 'react-bootstrap';
 
 const Home = () => {
   return (
-    <><div><TopNav class="top-bar fixed"></TopNav></div>
+    <><div><TopNav className="top-bar fixed"></TopNav></div>
     
      <div >
           
@@ -43,7 +45,9 @@ const Home = () => {
                         we will protect your parcel until you receive your parcel
                       </p>
                     </div>
-
+                    <Container>
+                    <PickUpFormComponent/>
+                    </Container>
               
      
       

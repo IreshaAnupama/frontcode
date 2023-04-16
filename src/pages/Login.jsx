@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-import Button from 'react-bootstrap/Button';
+import {Button,Card} from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import TopNav from '../components/TopNav';
 import './Pages.css';
@@ -12,7 +12,7 @@ const login = () => {
       <div className='bg-log'>
 
       <div className='wrapper  d-flex align-items-center justify-content-center w-100'>
-      <div className='login' >
+      <Card className='login' >
         <h2 className='mb-3'>Login Here</h2>
         
         <Form>
@@ -48,7 +48,7 @@ const login = () => {
     
   </Form>
   
-      </div>
+      </Card>
       </div>
       </div>
       

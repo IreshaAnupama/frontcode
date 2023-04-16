@@ -1,10 +1,13 @@
 import React from 'react'
-import AssignVehiles from '../../components/staff/AssignVehiles'
+import StaffVehicleAssign from '../../components/staff/StaffVehicleAssign'
+import { Container } from 'react-bootstrap'
 
 function VehicleAssign() {
   return (
     <div>
-        <AssignVehiles/>
+      <Container style={{padding:"20px"}}>
+        <StaffVehicleAssign/>
+        </Container>
     </div>
   )
 }

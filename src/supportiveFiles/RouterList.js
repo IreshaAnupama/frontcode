@@ -7,18 +7,20 @@ import UserMap from '../pages/MapForUser';
 import DriverProfile from'../pages/driverPages/DriverProfile';
 import Imageexample from '../pages/driverPages/Imageexample';
 import OrderOfShedule from '../pages/driverPages/OrderOfShedule';
-import Eamplemap from '../components/Eamplemap';
+
 import ParcelList from '../pages/userPages/ParcelList';
 import UserProfile from '../pages/userPages/UserProfile';
 import AddParcel from '../pages/AddParcel';
 import PickUpFormComponent from '../components/customer/PickUpFormComponent';
 import PickupConformComponent from '../components/customer/PickupConformComponent';
 import VehicleAssign from '../pages/staf/VehicleAssign';
-import DevelopEx from '../DevelopEx.js';
+
 import {createBrowserRouter} from "react-router-dom";
 import DriverListOfParcel from '../pages/driverPages/DriverListOfParcel';
-import CheckOut from '../pages/CheckOut';
+
 import DriverSign from '../pages/driverPages/DriverSign';
+import UserSign from '../pages/userPages/UserSign';
+import UserSendParcel from '../pages/userPages/UserSendParcel';
   
 
   export const router = createBrowserRouter([
@@ -62,11 +64,7 @@ import DriverSign from '../pages/driverPages/DriverSign';
       path:"/orderofshedule",
       element:<OrderOfShedule/>
     },
-    {
-      path:"/examplemap",
-      element:<Eamplemap/>
-    }
-    ,
+
     {
       path:"/parcelList",
       element:<ParcelList/>
@@ -91,23 +89,25 @@ import DriverSign from '../pages/driverPages/DriverSign';
       path:"/vehicleAssign",
       element:<VehicleAssign/>
     },
+    
     {
-      path:"/developEx",
-      element:<DevelopEx/>
-    },
-    {
-        path:"/driverListOfParecel",
+        path:"/driverListOfParcel",
         element:<DriverListOfParcel/>
       },
-      {
-        path:"/checkOut",
-        element:<CheckOut/>
 
-      },
       {
         path:"/driverSign",
         element:<DriverSign/>
-      }
+      },
+      {
+        path:"/userSign",
+        element:<UserSign/>
+      },
+      {
+        path:"/userSendParcel",
+        element:<UserSendParcel/>
+
+      },
           
 
 

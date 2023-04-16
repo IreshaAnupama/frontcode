@@ -16,10 +16,12 @@ import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 
 function PickupConformComponent() {
+  
   const [details, setDetails] = useState({
     password: "",
   });
 
+  const parcelId=null;
   const handleChange = (e) => {
     const { name, value } = e.target;
     setDetails((prev) => {
@@ -54,6 +56,10 @@ function PickupConformComponent() {
     specialNote: parcel.spetialNote,
     parcelCost: parcel.cost,
     deleveryCost: deleveryCost,
+    weight: parcel.weight,
+    length: parcel.length,
+    width: parcel.width,
+    height: parcel.height,
 
     senderName: parcel.senderName,
     senderEmail: parcel.senderEmail,
@@ -73,12 +79,22 @@ function PickupConformComponent() {
     e.preventDefault();
     handleShow();
 
+    function getId(e){
+      console.log(e);
+    }
+
     SenderService.addPickup(newParcel).then((res) => {
-      console.log("savePickup");
+      //console.log(res.data);
+      this.parcelId=res.data;
+      getId(res.data);
       handleShow();
       //navigate("/pickupConformComponent")
     });
+
+    
   };
+
+
 
   // SenderService.addPickup(newParcel).then(res =>{
   console.log(newParcel);
@@ -181,7 +197,19 @@ function PickupConformComponent() {
                   Special Note : {newParcel.specialNote}
                 </ListGroup.Item>
                 <ListGroup.Item>
-                  Parcel Cost : {newParcel.deleveryCost}
+                  Parcel Weight : {newParcel.weight}
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  Parcel length : {newParcel.length}
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  Parcel width : {newParcel.width}
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  Parcel Height : {newParcel.height}
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  Parcel Cost : {newParcel.parcelCost}
                 </ListGroup.Item>
                 <ListGroup.Item>
                   Delevery Cost : {newParcel.deleveryCost}
@@ -203,7 +231,8 @@ function PickupConformComponent() {
         <Modal.Header closeButton>
           <Modal.Title>
             Your parcel id is{" "}
-            <ListGroup.Item> {newParcel.pickupDate}</ListGroup.Item>{" "}
+            <ListGroup.Item> {parcelId}</ListGroup.Item>{" "}
+          
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>

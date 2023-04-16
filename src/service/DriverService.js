@@ -1,18 +1,19 @@
 import axios from "axios";
 
-const CREATE_DRIVER="http://localhost:8080/user/createDriver";
+const CREATE_DRIVER='http://localhost:8080/user/register';
     
     
     
 
 class DriverService{
     createDriver(driver){
-        return axios.post(CREATE_DRIVER,driver);
+        const token=axios.post(CREATE_DRIVER,driver);
+        return token;
     }
 
 }
 
-export default new DriverService
+export default new DriverService()
 
 
 

@@ -19,7 +19,7 @@ export const  cities = [
 export const  paymentTypes = [
   {
     id :0,
-      value: "--Choose--",
+      value: "",
       label: "--Choose--",
   },
     {
@@ -37,13 +37,18 @@ export const  paymentTypes = [
 export const  vehicleTypes = [
   {
     id :3,
-      value: "--Choose--",
+      value: "",
       label: "--Choose--",
   },
     {
       id :0,
         value: "Bike",
         label: "Bike",
+    },
+    {
+      id :0,
+        value: "Three wheel",
+        label: "Tree Wheel",
     },
     {
       id :1,
@@ -55,7 +60,7 @@ export const  vehicleTypes = [
 export const  postMethods = [
   {
     id :5,
-      value: "--Choose--",
+      value: "",
       label: "--Choose--",
   },
     {
@@ -88,7 +93,7 @@ export const  postMethods = [
   export const districts = [
     {
       id :26,
-        value: "--Choose--",
+        value: "",
         label: "--Choose--",
     },
     {

@@ -1,6 +1,7 @@
 import React from 'react'
 import './Pages.css';
 
+
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import TopNav from '../components/TopNav';
@@ -21,7 +22,7 @@ const Contact = () => {
     <><div><TopNav></TopNav></div>
     <div /*class="contactbody" */ >
       <section className="contact-section">
-      <div className="container">
+      <div className="container" >
         <ToastContainer position="top-center" />
         <div className="row justify-content-center">
           <div className="col-md-10">

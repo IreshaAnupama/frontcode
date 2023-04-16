@@ -1,7 +1,7 @@
-import './globals.css'
+import "./globals.css";
 
-import { useNavigate ,Link,useLocation} from "react-router-dom";
-import { Container, Form } from 'react-bootstrap';
+import { useNavigate, Link, useLocation } from "react-router-dom";
+import { Container, Form } from "react-bootstrap";
 import { useState, useMemo } from "react";
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 import usePlacesAutocomplete, {
@@ -16,83 +16,100 @@ import {
   ComboboxOption,
 } from "@reach/combobox";
 import "@reach/combobox/styles.css";
-import {Button, Row, Col} from 'react-bootstrap';
-
+import { Button, Row, Col } from "react-bootstrap";
 
 export default function MapForUser() {
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey:"AIzaSyDwtBza38O5StjIz7dPbWDcX8BK-JSD2z0",
+    googleMapsApiKey: "AIzaSyDwtBza38O5StjIz7dPbWDcX8BK-JSD2z0",
     libraries: ["places"],
   });
 
-  
-
-  if(!isLoaded) return <div> looading....</div>;
+  if (!isLoaded) return <div> looading....</div>;
   return <Map />;
-  
-
 }
 
-function Map(){
-  const pathForPage=useLocation().state?.data;
-console.log(pathForPage);
+function Map() {
+  const pathForPage = useLocation().state?.data;
+  console.log(pathForPage);
 
-  const center =useMemo(()=>({lat:44, lng: -80}),[]);
-  const [selected,setSelected] = useState({lat:6.927079, lng: 79.861244});
+  const center = useMemo(() => ({ lat: 44, lng: -80 }), []);
+  const [selected, setSelected] = useState({ lat: 6.927079, lng: 79.861244 });
 
   //const [coordinates, setCoordinates] = useState({lat:6.927079, lng:79.861244});
-  const handleDragEnd =(e) => {
-  setSelected({lat:e.latLng.lat(), lng:e.latLng.lng()});
-  console.log(selected);
-  }
+  const handleDragEnd = (e) => {
+    setSelected({ lat: e.latLng.lat(), lng: e.latLng.lng() });
+    console.log(selected);
+  };
 
   const navigate = useNavigate();
-  const success="location saved";
+  const success = "location saved";
 
   const handleClick = () => {
-    navigate("/signing", { state:{data: selected,success} });
+    navigate("/signing", { state: { data: selected, success } });
   };
 
   return (
     <>
       <div className="places-container">
         <Container>
-            <Row>
-              <Col>
-                <PlacesAutocomplete setSelected={setSelected}  />
-              </Col>
-              <Col>
-                {pathForPage===1?
-                   <Link to="/userSign"  state={{data:selected,success}} className="Link">
-                     <Button className="btn btn-success" > save location</Button></Link>
-                       :
-                       pathForPage===2?
-                       <Link to="/driverSign"  state={{data:selected,success}} className="Link">
-                       <Button className="btn btn-success" > save location</Button></Link>
-                       :
-                       <Link to="/driverProfile"  state={{data: selected,success}} className="Link">
-                     <Button className="btn btn-success" > save location</Button>
-                     <Button className="btn btn-danger"  style={{marginLeft:"10px"}}> Cancel
+          <Row>
+            <Col>
+              <PlacesAutocomplete setSelected={setSelected} />
+            </Col>
+            <Col>
+              {pathForPage === 1 ? (
+                <Link
+                  to="/userSign"
+                  state={{ data: selected, success }}
+                  className="Link"
+                >
+                  <Button className="btn btn-success"> save location</Button>
+                </Link>
+              ) : pathForPage === 2 ? (
+                <Link
+                  to="/driverSign"
+                  state={{ data: selected, success }}
+                  className="Link"
+                >
+                  <Button className="btn btn-success"> save location</Button>
+                </Link>
+              ) : (
+                <Link
+                  to="/driverProfile"
+                  state={{ data: selected, success }}
+                  className="Link"
+                >
+                  <Button className="btn btn-success"> save location</Button>
+                  <Button
+                    className="btn btn-danger"
+                    style={{ marginLeft: "10px" }}
+                  >
+                    {" "}
+                    Cancel
                   </Button>
-                 </Link>
-                  }  
-              </Col>
-            </Row>
-         </Container>
+                </Link>
+              )}
+            </Col>
+          </Row>
+        </Container>
       </div>
 
-      <GoogleMap 
-        zoom={15} 
+      <GoogleMap
+        zoom={15}
         center={selected}
-        mapContainerClassName="map-container">
-            
-            {selected &&  <Marker position={selected} onCursorChanged={handleDragEnd} draggable={true} />} 
+        mapContainerClassName="map-container"
+      >
+        {selected && (
+          <Marker
+            position={selected}
+            onCursorChanged={handleDragEnd}
+            draggable={true}
+          />
+        )}
       </GoogleMap>
-   </>
+    </>
   );
 }
-
-
 
 const PlacesAutocomplete = ({ setSelected }) => {
   const {
@@ -103,15 +120,15 @@ const PlacesAutocomplete = ({ setSelected }) => {
     clearSuggestions,
   } = usePlacesAutocomplete();
 
-   const handleSelect = async (address) => {
-      setValue(address, false);
-      clearSuggestions();
+  const handleSelect = async (address) => {
+    setValue(address, false);
+    clearSuggestions();
 
-      const results = await getGeocode({ address });
-      const { lat, lng } = await getLatLng(results[0]);
-      setSelected({ lat, lng });
-  }; 
-              
+    const results = await getGeocode({ address });
+    const { lat, lng } = await getLatLng(results[0]);
+    setSelected({ lat, lng });
+  };
+
   return (
     <Combobox onSelect={handleSelect}>
       <ComboboxInput
@@ -120,21 +137,15 @@ const PlacesAutocomplete = ({ setSelected }) => {
         disabled={!ready}
         className='="combobox-input'
         placeholder="Search an addrress"
-        />
-        <ComboboxPopover>
-          <ComboboxList>
-            {status === "OK" && 
-              data.map (({place_id, description }) => (
-                <ComboboxOption key={place_id} value={description} />
-                ))}
-          </ComboboxList>
-        </ComboboxPopover>
+      />
+      <ComboboxPopover>
+        <ComboboxList>
+          {status === "OK" &&
+            data.map(({ place_id, description }) => (
+              <ComboboxOption key={place_id} value={description} />
+            ))}
+        </ComboboxList>
+      </ComboboxPopover>
     </Combobox>
-    
-    
-    
-   
-   
-  
   );
 };

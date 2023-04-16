@@ -10,6 +10,7 @@ import { districts } from "../../supportiveFiles/SelectList";
 import DriverService from "../../service/DriverService";
 import Feedback from "react-bootstrap/esm/Feedback";
 import { Container, Row, Col } from "react-bootstrap";
+import '../Pages.css';
 
 function DriverSign(props) {
   const navigate = useNavigate();
@@ -90,9 +91,10 @@ function DriverSign(props) {
       <div>
         <TopNav></TopNav>
       </div>
+      <div className='bg-log'>
       <Container>
         <div className="wrapper  d-flex align-items-center justify-content-center w-100">
-          <Form noValidate validated={validated} onSubmit={handleSubmit}>
+          <Form noValidate validated={validated} onSubmit={handleSubmit} >
             <h2 className="mb-3">Sign in here </h2>
             <Row>
               <Col>
@@ -260,6 +262,7 @@ function DriverSign(props) {
           </Form>
         </div>
       </Container>
+      </div>
     </>
   );
 }

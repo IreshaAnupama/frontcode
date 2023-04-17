@@ -38,12 +38,12 @@ function PickupConformComponent() {
   // console.log(location.state.pickup.cost);
   // console.log('location.state.pickup=>' +JSON.stringify());
   console.log(parcel);
-  let deleveryCost;
+  let deliveryCost;
 
   if (parcel.senderDistrict === parcel.receiverDistrict) {
-    deleveryCost = 150;
+    deliveryCost = 150;
   } else {
-    deleveryCost = 250;
+    deliveryCost = 250;
   }
 
   const newParcel = {
@@ -55,7 +55,7 @@ function PickupConformComponent() {
     paymentType: parcel.paymentType,
     specialNote: parcel.spetialNote,
     parcelCost: parcel.cost,
-    deleveryCost: deleveryCost,
+    deliveryCost: deliveryCost,
     weight: parcel.weight,
     length: parcel.length,
     width: parcel.width,
@@ -212,7 +212,7 @@ function PickupConformComponent() {
                   Parcel Cost : {newParcel.parcelCost}
                 </ListGroup.Item>
                 <ListGroup.Item>
-                  Delevery Cost : {newParcel.deleveryCost}
+                  Delevery Cost : {newParcel.deliveryCost}
                 </ListGroup.Item>
               </ListGroup>
             </Card.Body>

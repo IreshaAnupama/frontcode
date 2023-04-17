@@ -4,7 +4,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
-import Nav from "react-bootstrap/Nav";
 import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { districts } from "../../supportiveFiles/SelectList";
 import DriverService from "../../service/DriverService";

@@ -21,12 +21,17 @@ import DriverListOfParcel from '../pages/driverPages/DriverListOfParcel';
 import DriverSign from '../pages/driverPages/DriverSign';
 import UserSign from '../pages/userPages/UserSign';
 import UserSendParcel from '../pages/userPages/UserSendParcel';
+import TestMap from '../pages/staf/TestMap';
   
 
   export const router = createBrowserRouter([
     {
       path:"/",
       element: <Home/>
+    },
+    {
+      path:"/testMap",
+      element:<TestMap/>
     },
     {
       path:"/home",

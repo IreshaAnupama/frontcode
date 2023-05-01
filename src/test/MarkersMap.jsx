@@ -29,8 +29,8 @@ export default function MarkersMap() {
 
   const parcelList=useLocation().state?.data2;
   
-  console.log(parcelList)
-
+  //console.log(parcelList)
+ 
 
   if (!isLoaded) return <div> looading....</div>;
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 import DriverNavbar from '../components/Driver/DriverNavbar';
-import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
+
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";

@@ -3,7 +3,7 @@ import "./globals.css";
 import { useNavigate, Link, useLocation } from "react-router-dom";
 import { Container, Form } from "react-bootstrap";
 import { useState, useMemo } from "react";
-import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
+import { GoogleMap, useLoadScript, Marker, useJsApiLoader } from "@react-google-maps/api";
 import usePlacesAutocomplete, {
   getGeocode,
   getLatLng,
@@ -18,10 +18,11 @@ import {
 import "@reach/combobox/styles.css";
 import { Button, Row, Col } from "react-bootstrap";
 
+const libraries = ['places']
 export default function MapForUser() {
-  const { isLoaded } = useLoadScript({
+  const {isLoaded, loadError} = useJsApiLoader({
     googleMapsApiKey: "AIzaSyDwtBza38O5StjIz7dPbWDcX8BK-JSD2z0",
-    libraries: ["places"],
+    libraries,
   });
 
   if (!isLoaded) return <div> looading....</div>;
@@ -34,12 +35,15 @@ function Map() {
 
   const center = useMemo(() => ({ lat: 44, lng: -80 }), []);
   const [selected, setSelected] = useState({ lat: 6.927079, lng: 79.861244 });
-
+  console.log(selected);
   //const [coordinates, setCoordinates] = useState({lat:6.927079, lng:79.861244});
   const handleDragEnd = (e) => {
     setSelected({ lat: e.latLng.lat(), lng: e.latLng.lng() });
     console.log(selected);
   };
+  
+  
+  
 
   const navigate = useNavigate();
   const success = "location saved";
@@ -102,7 +106,7 @@ function Map() {
         {selected && (
           <Marker
             position={selected}
-            onCursorChanged={handleDragEnd}
+            onDragEnd={handleDragEnd}
             draggable={true}
           />
         )}

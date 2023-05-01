@@ -27,7 +27,7 @@ const DriverNavbar = () => {
             </Nav>
             <Nav>
             <Nav.Link href="/driverListOfParcel">Parcel List</Nav.Link>
-              <Nav.Link href="/orderofshedule">Shedule</Nav.Link>
+              <Nav.Link href="/wayPoint">Shedule</Nav.Link>
               <Nav.Link href="/driverProfile">Profile</Nav.Link>
             </Nav>
           </Navbar.Collapse>

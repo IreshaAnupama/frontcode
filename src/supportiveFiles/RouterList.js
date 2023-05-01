@@ -22,13 +22,54 @@ import DriverSign from '../pages/driverPages/DriverSign';
 import UserSign from '../pages/userPages/UserSign';
 import UserSendParcel from '../pages/userPages/UserSendParcel';
 import TestMap from '../pages/staf/TestMap';
-  
+import AppCopy from '../test/AppCopy';
+import WayPoint from '../test/WayPoint';
+import MyLocation from '../test/MyLocation';
+import CopyApp from '../test/newtest/CopyApp';
+import Map from '../test/newtest/Map';
+import computeRoutesPreferred from '../test/newtest/apis/RoutesPreferred';
+import RoutesPreferred from '../test/newtest/apis/RoutesPreferred';
+import GraphComponent from '../test/GraphComponent';
+import MarkersMap from '../test/MarkersMap'
 
   export const router = createBrowserRouter([
     {
       path:"/",
       element: <Home/>
     },
+    {
+      path:"markersMap",
+      element:<MarkersMap/>
+    },
+    {
+      path:"graphcomponent",
+      element:<GraphComponent/>
+    },
+    {
+      path:"/wayPoint",
+      element: <WayPoint/>
+    },
+    {
+      path:"/routesPreferred",
+      element: <RoutesPreferred/>
+    },
+    {
+      path:"/map",
+      element: <Map/>
+    },
+    {
+      path:"/copyApp",
+      element: <CopyApp/>
+    },
+    {
+      path:"/myLocation",
+      element: <MyLocation/>
+    },
+    {
+      path:"/appCopy",
+      element: <AppCopy/>
+    },
+
     {
       path:"/testMap",
       element:<TestMap/>

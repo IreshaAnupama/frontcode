@@ -9,7 +9,7 @@ function DriverParcelList() {
   }, []);
   const loadParcels = async () => {
     const result = await axios.get(
-      "http://localhost:8080/user/1/driverParcelList"
+      "http://localhost:8080/user/7/driverParcelList"
     );
     setParcels(result.data);
     console.log(result);

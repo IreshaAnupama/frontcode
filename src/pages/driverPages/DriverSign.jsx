@@ -63,8 +63,8 @@ function DriverSign(props) {
   const handleChange = (e) => {
     const { name, value } = e.target;
     if (coordinate != null) {
-      details.longitude = coordinate.lat;
-      details.latitude = coordinate.lng;
+      details.longitude = coordinate.lng;
+      details.latitude = coordinate.lat;
     }
 
     setDetails((prev) => {

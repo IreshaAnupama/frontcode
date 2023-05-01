@@ -44,11 +44,11 @@ function UserSign(props) {
   });
 
   const handleChange = (e) => {
-    if (coordinate != null) {
-      details.longitude = coordinate.lat;
-      details.latitude = coordinate.lng;
-    }
     const { name, value } = e.target;
+    if (coordinate != null) {
+      details.longitude = coordinate.lng;
+      details.latitude = coordinate.lat;
+    }
 
     //console.log(postalCode);
 
@@ -58,9 +58,10 @@ function UserSign(props) {
   };
 
   const handleSubmit = (e) => {
+    e.preventDefault();
     const form = e.currentTarget;
     if (form.checkValidity() === false) {
-      e.preventDefault();
+      //e.preventDefault();
       e.stopPropagation();
     }
     setValidated(true);
